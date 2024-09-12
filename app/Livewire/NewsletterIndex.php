@@ -2,16 +2,23 @@
 
 namespace App\Livewire;
 
+use Illuminate\Validation\Rule;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 class NewsletterIndex extends Component
 {
-    #[Rule('required')]
     public string $email = '';
 
-    public string $turnstileResponse;
+    public string $turnstileResponse = '';
+
+    public function rules()
+    {
+        return [
+            'email' => 'required|email',
+            'turnstileResponse' => ['required', Rule::turnstile()]
+        ];
+    }
 
     public function submit()
     {

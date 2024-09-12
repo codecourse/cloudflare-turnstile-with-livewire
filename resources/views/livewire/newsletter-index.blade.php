@@ -25,6 +25,12 @@
                             wire:model="turnstileResponse"
                         />
                     </div>
+
+                    @error('turnstileResponse')
+                        <div class="text-sm text-red-500">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <div>
