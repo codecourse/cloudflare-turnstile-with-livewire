@@ -20,6 +20,14 @@
                 </div>
 
                 <div>
+                    <div wire:ignore>
+                        <x-turnstile
+                            wire:model="turnstileResponse"
+                        />
+                    </div>
+                </div>
+
+                <div>
                     <x-primary-button>
                         Subscribe
                     </x-primary-button>

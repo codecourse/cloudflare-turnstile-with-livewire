@@ -11,6 +11,8 @@ class NewsletterIndex extends Component
     #[Rule('required')]
     public string $email = '';
 
+    public string $turnstileResponse;
+
     public function submit()
     {
         $this->validate();
