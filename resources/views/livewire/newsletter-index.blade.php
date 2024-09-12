@@ -23,6 +23,8 @@
                     <div wire:ignore>
                         <x-turnstile
                             wire:model="turnstileResponse"
+                            data-action="newsletter"
+                            data-theme="light"
                         />
                     </div>
 

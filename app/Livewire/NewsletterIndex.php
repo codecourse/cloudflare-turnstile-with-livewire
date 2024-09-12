@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class NewsletterIndex extends Component
 {
@@ -17,6 +18,14 @@ class NewsletterIndex extends Component
         return [
             'email' => 'required|email',
             'turnstileResponse' => ['required', Rule::turnstile()]
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'turnstileResponse.required' => '...',
+            Turnstile::class => 'Invalid turnstile response'
         ];
     }
 
